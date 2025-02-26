@@ -68,7 +68,7 @@ Our approach leverages **machine learning** and **graph-based analysis** to pred
   - **Mean Squared Error (MSE)**  
   - **R² Score**  
 
-### **6. Integration & Automation**  
+### **7. Integration & Automation**  
 - Designed for **fast execution** for automated timing checks.  
 - Runs on raw RTL files without requiring full synthesis, reducing **design iteration time**.  
 
