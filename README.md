@@ -197,9 +197,10 @@ The computational complexity of the algorithm is analyzed based on its key compo
 ## Future Work
 
 ## References
-
-## Contributors
-
-## Acknowledgements
+[1] Baños, Raul & Gil, Consolación & Montoya, Maria & Ortega, Julio. (2003). A Parallel Evolutionary Algorithm for Circuit Partitioning.. 365-371. 10.1109/EMPDP.2003.1183612. <br>
+[2] Bairamkulov, R., Friedman, E. (2023). Graphs in VLSI circuits and systems. In: Graphs in VLSI. Springer, Cham. https://doi.org/10.1007/978-3-031-11047-4_3<br>
+[3] Wang, Jichao. (2024). A hybrid deep learning and clonal selection algorithm-based model for commercial building energy consumption prediction. Science Progress. 107. 10.1177/00368504241283360. <br>
+[4] Olabiyi, Winner. (2024). APPLYING MACHINE LEARNING FOR TIMING ANALYSIS IN DIGITAL CIRCUITS USING PYRTL. <br>
 
 ## Contact Informantion
+- Sree Vishnu Varthini S, Pre-Final Year Student, Sri Eshwar College of Engineering, sreevishnuvarthini@gmail.com
