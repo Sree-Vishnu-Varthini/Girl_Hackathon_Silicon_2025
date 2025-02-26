@@ -260,6 +260,31 @@ This approach ensures **fast and accurate predictions**, enabling early detectio
 
 ## Future Work
 
+## **Future Work**  
+
+While this project successfully predicts combinational depth and detects timing violations, several areas can be improved and expanded in future iterations.  
+
+### **1. Enhancing Model Accuracy**  
+- Explore **deep learning models**, such as Graph Neural Networks (GNNs), to improve prediction accuracy.  
+- Incorporate additional features like **fan-in, fan-out, and wire delays** to refine timing estimations.  
+- Train on **larger datasets** with real-world circuits for better generalization.  
+
+### **2. Optimizing Performance**  
+- Implement **parallel processing** techniques to speed up feature extraction and graph traversal.  
+- Explore lightweight **approximate algorithms** for combinational depth estimation to further reduce runtime.  
+
+### **3. Integrating with EDA Tools**  
+- Develop a **plugin for popular EDA tools** (e.g., Synopsys, Cadence) for seamless timing prediction integration.  
+- Enable real-time feedback for designers during **RTL development** without running full synthesis.  
+
+### **4. Expanding Functionality**  
+- Extend the tool to support **sequential circuits**, predicting depth across pipeline stages.  
+- Include **power and area estimation**, allowing for multi-objective optimization beyond timing analysis.  
+- Support different **technology nodes** (e.g., 5nm, 7nm) by incorporating **process-specific gate delays**.  
+
+By implementing these future improvements, this project can become an even more powerful tool for **early-stage timing analysis and optimization** in digital design. 🚀  
+
+
 ## References
 [1] Baños, Raul & Gil, Consolación & Montoya, Maria & Ortega, Julio. (2003). A Parallel Evolutionary Algorithm for Circuit Partitioning.. 365-371. 10.1109/EMPDP.2003.1183612. <br> <br> 
 [2] Bairamkulov, R., Friedman, E. (2023). Graphs in VLSI circuits and systems. In: Graphs in VLSI. Springer, Cham. https://doi.org/10.1007/978-3-031-11047-4_3<br> <br> 
