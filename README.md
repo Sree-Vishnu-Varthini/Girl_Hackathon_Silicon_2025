@@ -101,10 +101,96 @@ Each RTL module was processed to extract the following key features:
 
 This dataset enables the **ML model to predict combinational depth accurately and detect setup/hold violations efficiently**, improving early-stage timing analysis.  
 
+## **Installation & Setup**  
 
-## Installation & Setup
+Follow these steps to set up the environment and run the project from scratch.  
 
-## Complexity Analysis
+### **Step 1: Install Anaconda (Recommended)**  
+Anaconda provides a pre-configured Python environment, making setup easier.  
+
+- Download and install Anaconda from:  
+  [https://www.anaconda.com/products/distribution](https://www.anaconda.com/products/distribution)  <br>
+  
+- Open **Anaconda Prompt** and create a new environment:  
+  ```sh
+  conda create --name timing_analysis python=3.9
+  ```
+- Activate the environment:  
+  ```sh
+  conda activate timing_analysis
+  ```
+
+---
+
+### **Step 2: Clone the Repository**  
+Download the project files from GitHub:  
+```sh
+git clone https://github.com/your-repo-link
+cd your-repo
+```
+
+---
+
+### **Step 3: Install Dependencies**  
+
+Install the dependencies:  
+```sh
+pip install numpy pandas scikit-learn networkx regex
+```
+
+---
+
+### **Step 4: Running the Code**  
+To analyze an RTL module and predict combinational depth, run:  
+```sh
+python main.py --rtl data/example_rtl.v --clock 10
+```
+Replace `"data/example_rtl.v"` with your RTL file path and adjust the clock period as needed.  
+
+---
+
+### **Step 5: Using Jupyter Notebook (Optional)**  
+For interactive development and debugging:  
+```sh
+conda install jupyter  
+jupyter notebook
+```
+Open the notebook and run the provided scripts to visualize circuit graphs and ML predictions.  
+
+---
+
+### **Step 6: Verifying Installation**  
+Run the following test to check if everything is working correctly:  
+```sh
+python -c "import numpy, pandas, sklearn, networkx; print('Setup Successful!')"
+```
+
+---
+
+## **Complexity Analysis**  
+
+The computational complexity of the algorithm is analyzed based on its key components:  
+
+### **1. Feature Extraction (Graph Construction)**  
+- **Process:** Parse RTL to extract gate types and connections, then construct a **directed acyclic graph (DAG)**.  
+- **Time Complexity:** \(O(V + E)\), where **V** is the number of signals and **E** is the number of connections (edges).  
+
+### **2. Combinational Depth Calculation**  
+- **Process:** Find the longest path in the DAG to determine combinational depth.  
+- **Time Complexity:**  
+  - Using **Topological Sorting + DAG Longest Path Algorithm:** \(O(V + E)\).  
+  - Worst-case scenario (fully connected graph): \(O(V^2)\).  
+
+### **3. Machine Learning Model Training**  
+- **Support Vector Regressor (SVR):**  
+  - **Training:** \(O(N^2)\) (where \(N\) is the dataset size).  
+  - **Prediction:** \(O(N)\).  
+- **Random Forest Regressor:**  
+  - **Training:** \(O(N log N)\).  
+  - **Prediction:** \(O( log N)\).  
+- **Linear Regression:**  
+  - **Training:** \(O(N d^2)\) (where \(d\) is the number of features).  
+  - **Prediction:** \(O(d)\).  
 
 ## Alternatives Considered
 
