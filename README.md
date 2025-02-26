@@ -74,8 +74,33 @@ Our approach leverages **machine learning** and **graph-based analysis** to pred
 
 This approach ensures **fast and accurate** combinational depth estimation and **early-stage timing verification**, significantly improving design efficiency.
 
+## **Proof of Correctness**  
 
-## Proof of Correctness
+Our approach ensures the accuracy of **combinational depth prediction** and **timing violation detection** through multiple validation methods.  
+
+### **1. Ground Truth Validation**  
+- Combinational depth values were manually computed using **graph-based analysis** and used as ground truth.  
+- The machine learning model’s predictions were compared against these values, ensuring correctness.  
+
+### **2. Feature Extraction Verification**  
+- RTL parsing was validated by checking extracted gate counts and circuit structures.  
+- The **directed acyclic graph (DAG)** representation was manually reviewed to ensure accurate signal flow.  
+
+### **3. Model Performance Metrics**  
+- The ML model’s accuracy was measured using:  
+  - **Mean Absolute Error (MAE)** – Measures average prediction error.  
+  - **Mean Squared Error (MSE)** – Penalizes larger errors.  
+  - **R² Score** – Measures how well predictions explain depth variations.  
+- **SVR provided the highest accuracy**, aligning closely with synthesis reports.  
+
+### **4. Timing Violation Verification**  
+- **Setup Violations** were flagged if `Max Delay ≥ Clock Period`.  
+- **Hold Violations** were detected when `Min Delay ≤ 10% of Clock Period`.  
+- Results were cross-checked against known timing constraints to confirm correctness.  
+
+### **5. Cross-Validation & Testing**  
+- The dataset was split into **80% training and 20% testing** for model validation.  
+- **K-fold cross-validation** was used to ensure the model generalizes well across different circuits.  
 
 ## **Dataset**  
 
