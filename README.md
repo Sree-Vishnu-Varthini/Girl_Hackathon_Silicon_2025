@@ -77,7 +77,30 @@ This approach ensures **fast and accurate** combinational depth estimation and *
 
 ## Proof of Correctness
 
-## Dataset
+## **Dataset**  
+
+The dataset was **self-created** to ensure high-quality, labeled data for training and validating the machine learning model. It consists of RTL implementations, extracted gate-level features, and combinational depth values derived from synthesis reports.  
+
+### **1. Data Collection**  
+- RTL modules were manually designed and analyzed.  
+- Logic equations were extracted to represent **combinational circuits**.  
+
+### **2. Feature Set**  
+Each RTL module was processed to extract the following key features:  
+- **Gate Counts:** Number of AND, OR, NOT, NAND, NOR, XOR, XNOR, and BUFFER gates.  
+- **Combinational Depth:** Longest path in the **directed acyclic graph (DAG)** representation of the circuit.  
+- **Final Output Signal:** Captures logic dependency structure.  
+
+### **3. Labeling & Ground Truth**  
+- **Combinational Depth** serves as the target variable for ML training.  
+- Depth values were manually verified to ensure accuracy.  
+
+### **4. Data Validation**  
+- Extracted gate counts and circuit structures were manually reviewed.  
+- DAG-based combinational depth calculations were cross-checked.  
+
+This dataset enables the **ML model to predict combinational depth accurately and detect setup/hold violations efficiently**, improving early-stage timing analysis.  
+
 
 ## Installation & Setup
 
