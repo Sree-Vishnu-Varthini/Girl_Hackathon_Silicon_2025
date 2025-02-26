@@ -257,9 +257,6 @@ After evaluating alternatives, an **ML-based approach** was chosen as it offers 
 
 This approach ensures **fast and accurate predictions**, enabling early detection of potential timing violations before synthesis. 🚀  
 
-
-## Future Work
-
 ## **Future Work**  
 
 While this project successfully predicts combinational depth and detects timing violations, several areas can be improved and expanded in future iterations.  
@@ -282,7 +279,7 @@ While this project successfully predicts combinational depth and detects timing 
 - Include **power and area estimation**, allowing for multi-objective optimization beyond timing analysis.  
 - Support different **technology nodes** (e.g., 5nm, 7nm) by incorporating **process-specific gate delays**.  
 
-By implementing these future improvements, this project can become an even more powerful tool for **early-stage timing analysis and optimization** in digital design. 🚀  
+By implementing these future improvements, this project can become an even more powerful tool for **early-stage timing analysis and optimization** in digital design.
 
 
 ## References
