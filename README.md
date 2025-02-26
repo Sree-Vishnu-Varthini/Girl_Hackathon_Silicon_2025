@@ -192,7 +192,71 @@ The computational complexity of the algorithm is analyzed based on its key compo
   - **Training:** \(O(N d^2)\) (where \(d\) is the number of features).  
   - **Prediction:** \(O(d)\).  
 
-## Alternatives Considered
+## **Alternatives Considered**  
+
+During the development of this project, several alternative approaches were explored for predicting combinational depth and detecting timing violations. Below are the key alternatives, along with their advantages and reasons for rejection.  
+
+### **1. Graph Neural Networks (GNNs)**  
+**Description:**  
+GNNs model circuit structures effectively by learning dependencies between gates in a graph representation.  
+
+**Advantages:**  
+✅ Captures complex relationships between signals and gates.  
+✅ Scales well for large circuits.  
+✅ Reduces the need for manual feature engineering.  
+
+**Reasons for Rejection:**  
+❌ Requires **large datasets** for effective training, which were not readily available.  
+❌ **High computational cost**, making it impractical for quick timing analysis.  
+❌ **Difficult interpretability**, making debugging and validation harder.  
+
+### **2. Rule-Based Heuristics**  
+**Description:**  
+A predefined set of rules calculates combinational depth based on gate counts and structural patterns.  
+
+**Advantages:**  
+✅ **Fast execution**, as it runs in constant time.  
+✅ No need for training, making it easy to implement.  
+
+**Reasons for Rejection:**  
+❌ **Low generalization**, as heuristics may not cover complex circuit variations.  
+❌ **Limited accuracy**, especially in handling reconvergent paths and varying gate delays.  
+❌ Requires **manual updates** when new gate types or optimizations are introduced.  
+
+### **3. Traditional Graph Algorithms (Longest Path Calculation Without ML)**  
+**Description:**  
+Using **longest path algorithms** on a directed acyclic graph (DAG) to determine combinational depth directly.  
+
+**Advantages:**  
+✅ **Provides exact combinational depth** without needing ML.  
+✅ No dataset or model training required.  
+
+**Reasons for Rejection:**  
+❌ **Does not account for gate delays**, assuming all gates contribute equally to delay.  
+❌ **Scalability concerns**, as large circuits can lead to expensive computations.  
+❌ **Lack of adaptability**, since the approach does not improve with more data.  
+
+### **4. Static Timing Analysis (STA) with EDA Tools**  
+**Description:**  
+Integrating early-stage Static Timing Analysis (STA) tools instead of using ML-based predictions.  
+
+**Advantages:**  
+✅ **High accuracy**, as STA is a well-established industry standard.  
+✅ Can factor in **placement and routing effects** for realistic timing predictions.  
+
+**Reasons for Rejection:**  
+❌ **Computationally expensive**, making it slower than an ML-based approach.  
+❌ **Tool dependency**, requiring proprietary EDA tools that may not be accessible in all environments.  
+❌ Defeats the purpose of **early-stage lightweight timing prediction**.  
+
+### **Final Choice: Machine Learning-Based Prediction**  
+After evaluating alternatives, an **ML-based approach** was chosen as it offers the best balance of **speed, accuracy, and adaptability**. The **Support Vector Regressor (SVR), Random Forest, and Linear Regression** models allow for:  
+- **Quick combinational depth estimation** without full synthesis.  
+- **Improved adaptability** by learning from circuit patterns.  
+- **Efficient runtime**, making it suitable for early-stage timing analysis.  
+
+This approach ensures **fast and accurate predictions**, enabling early detection of potential timing violations before synthesis. 🚀  
+
 
 ## Future Work
 
